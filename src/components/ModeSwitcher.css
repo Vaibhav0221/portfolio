@@ -1,0 +1,90 @@
+/* ModeSwitcher — persistent pill control, floats above every mode.
+   z-index must beat the Professional header (z-index: 1000). */
+
+.modeswitch {
+  position: fixed;
+  z-index: 1600;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+}
+
+.modeswitch__option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: #d1d5db;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.modeswitch__option:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.modeswitch__option:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.modeswitch__option.is-active {
+  color: #111827;
+  background: #f9fafb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+/* Per-mode active accent */
+.modeswitch__option--terminal.is-active {
+  background: #22c55e;
+  color: #052e16;
+}
+
+.modeswitch__option--professional.is-active {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.modeswitch__option--manga.is-active {
+  background: #ffffff;
+  color: #111111;
+}
+
+/* Sit below the fixed Professional header so both stay reachable. */
+[data-mode='professional'] .modeswitch {
+  top: 78px;
+}
+
+@media (max-width: 640px) {
+  .modeswitch,
+  [data-mode='professional'] .modeswitch {
+    top: auto;
+    bottom: var(--spacing-md);
+    right: 50%;
+    transform: translateX(50%);
+    gap: 2px;
+  }
+
+  .modeswitch__option {
+    padding: 8px 12px;
+    font-size: var(--font-size-xs);
+  }
+
+  .modeswitch__label {
+    display: none;
+  }
+}

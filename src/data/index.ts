@@ -1,0 +1,16 @@
+export * from './projects';
+export { skillCategories } from './skills';
+export type { SkillCategory as SkillCategoryData } from './skills';
+export * from './experience';
+export * from './education';
+export * from './certifications';
+export * from './achievements';
+export type { Achievement } from './achievements';
+export { socialLinks } from './socialLinks';
+export type { SocialLink as SocialLinkData } from './socialLinks';
+export * from './navigation';
+export { personalInfo } from './personal';
+export type { PersonalInfo, SocialLink, SkillCategory } from './personal';
+export * from './about';
+export { portfolioData } from './portfolio';
+export type { PortfolioData } from './portfolio';

@@ -1,0 +1,69 @@
+# Dependencies
+
+node_modules/
+
+# Build output
+
+dist/
+build/
+
+# Environment variables / secrets
+
+.env
+.env.*
+!.env.example
+
+# Logs
+
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Vite
+
+.vite/
+
+# Testing / coverage
+
+coverage/
+
+# IDE / Editor
+
+.vscode/
+.idea/
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Local development
+
+*.local
+
+# Cache
+
+.cache/
+.parcel-cache/
+
+# TypeScript
+
+*.tsbuildinfo
+
+# Vercel 
+
+*.vercel
+
+# Claude 
+
+*.claude
+
+# Resume
+
+resume.pdf

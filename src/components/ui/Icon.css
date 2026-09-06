@@ -1,0 +1,43 @@
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper svg {
+  display: block;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.icon--emoji {
+  line-height: 1;
+}
+
+/* Specific icon styling */
+.icon--primary {
+  color: var(--primary-color);
+}
+
+.icon--secondary {
+  color: var(--secondary-color);
+}
+
+.icon--text-secondary {
+  color: var(--text-secondary);
+}
+
+.icon--white {
+  color: white;
+}

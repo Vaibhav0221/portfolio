@@ -1,0 +1,159 @@
+/* Shared ContactForm — theme-aware via design tokens.
+   Used by Professional mode and Manga mode (ink variant). */
+
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.cform__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--spacing-md);
+}
+
+@media (max-width: 560px) {
+  .cform__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cform__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.cform__label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.cform__required {
+  color: var(--error-color);
+}
+
+.cform__input,
+.cform__textarea {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  color: #1f2937;
+  background: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-md);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cform__input:focus-visible,
+.cform__textarea:focus-visible {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.cform__input--error,
+.cform__textarea.cform__input--error {
+  border-color: #ef4444;
+}
+
+.cform__error {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: #ef4444;
+}
+
+.cform__submit {
+  align-self: flex-start;
+  padding: var(--spacing-sm) var(--spacing-xl);
+  font-family: inherit;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: #ffffff;
+  background: #6366f1;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.cform__submit:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+.cform__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cform__submit:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.4);
+  outline-offset: 2px;
+}
+
+.cform__status {
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.cform__status--success {
+  color: #166534;
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.cform__status--error {
+  color: #991b1b;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+/* --- Manga "ink" skin ------------------------------------ */
+.cform--ink .cform__label {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.cform--ink .cform__input,
+.cform--ink .cform__textarea {
+  color: #111111;
+  background: #ffffff;
+  border: 3px solid #111111;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.cform--ink .cform__input:focus-visible,
+.cform--ink .cform__textarea:focus-visible {
+  outline: none;
+  border-color: #111111;
+  box-shadow: 2px 2px 0 #111111;
+}
+
+.cform--ink .cform__input--error,
+.cform--ink .cform__textarea.cform__input--error {
+  border-color: #dc2626;
+}
+
+.cform--ink .cform__error {
+  font-weight: 700;
+  color: #dc2626;
+}
+
+.cform--ink .cform__submit {
+  color: #ffffff;
+  background: #111111;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 rgba(17, 17, 17, 0.35);
+}
+
+.cform--ink .cform__submit:hover {
+  background: #333333;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.35);
+}

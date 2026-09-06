@@ -1,0 +1,12 @@
+export { Header } from './Header';
+export { Hero } from './Hero';
+export { About } from './About';
+export { Experience } from './Experience';
+export { Skills } from './Skills';
+export { Projects } from './Projects';
+export { Education } from './Education';
+export { Certifications } from './Certifications';
+export { Contact } from './Contact';
+export { Footer } from './Footer';
+export { ChessChatbot } from './ChessChatbot';
+export { AboutMeChatBot } from './AboutMeChatBot';
